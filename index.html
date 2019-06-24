@@ -9,6 +9,15 @@
   </head>
   <body onload="loadItems()">
     <h1>NameTBD</h1>
-    <ul class="list"></ul>
+    <ul id="list"></ul>
+    <div id="amount"></div>
+    <button type="button" onclick="clearItems()">Clear</button>
+    <p id="addForm">
+      <h3>Add Name & Value:</h3>
+      Name: <input type="text" id="nameInput"><br />
+      Value: <input type="text" id="valueInput"><br />
+      <button type="button" onclick="addItem()">Add</button>
+      <button type="button" onclick="clearForm()">Clear</button>
+    </p>
   </body>
 </html>
