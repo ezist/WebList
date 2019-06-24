@@ -19,8 +19,8 @@ function loadItems() {
   list.innerHTML = "";
   const items = {...localStorage};
   Object.keys(items).forEach(key => {
-    if(key.startsWith("mtndew:")) {
-      var filteredKey = key.replace("mtndew:", ""); // in the words of Tom Scott, this filter should "never ever, ever, ever, EVER be turned off"
+    if(key.startsWith("nametbd:")) {
+      var filteredKey = key.replace("nametbd:", ""); // in the words of Tom Scott, this filter should "never ever, ever, ever, EVER be turned off"
       filteredKey = filteredKey.replace(/</gi, "&lt;");
       filteredKey = filteredKey.replace(/>/gi, "&gt;");
       var item = items[key];
@@ -36,12 +36,12 @@ function loadItems() {
 function addItem() {
   "use strict";
   if (typeof(Storage) !== "undefined") {
-    var stateInput = document.getElementById("stateInput").value;
-    var codeInput = document.getElementById("codeInput").value;
-    localStorage.setItem("mtndew:" + codeInput, stateInput);
-    stateInput = "";
-    codeInput = "";
-    // console.log("added item " + stateInput.value);
+    var nameInput = document.getElementById("nameInput").value;
+    var valueInput = document.getElementById("valueInput").value;
+    localStorage.setItem("nametbd:" + nameInput, valueInput);
+    nameInput = "";
+    valueInput = "";
+    // console.log("added item " + nameInput.value);
     loadItems();
   } else {
     document.getElementById("list").innerHTML = "Sorry, your browser does not support Web Storage.";
@@ -52,7 +52,7 @@ function itemAmount() {
   var amount = 0;
   const items = {...localStorage};
   Object.keys(items).forEach(key => {
-    if(key.startsWith("mtndew:")) {
+    if(key.startsWith("nametbd:")) {
       amount += 1;
     }
   });
@@ -61,6 +61,6 @@ function itemAmount() {
 }
 function clearForm() {
   "use strict";
-  document.getElementById("stateInput").value = "";
-  document.getElementById("codeInput").value = "";
+  document.getElementById("nameInput").value = "";
+  document.getElementById("valueInput").value = "";
 }
