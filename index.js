@@ -1,4 +1,3 @@
-var list = document.getElementById("list");
 function clearItems() {
   "use strict";
   var r = confirm("Clear list?");
@@ -16,6 +15,7 @@ function deleteItem(key) {
 }
 function loadItems() {
   "use strict";
+  var list = document.getElementById("list");
   list.innerHTML = "";
   const items = {...localStorage};
   Object.keys(items).forEach(key => {
