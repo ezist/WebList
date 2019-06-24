@@ -1,2 +1,2 @@
-# NameTBD
-Some web app I'm making.
+# WebStorage List
+A simple persistent list using WebStorage.
