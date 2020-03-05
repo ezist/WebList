@@ -20,12 +20,12 @@ function loadItems() {
   const items = {...localStorage};
   Object.keys(items).forEach(key => {
     if(key.startsWith("nametbd:")) {
-      var filteredKey = key.replace("nametbd:", ""); // in the words of Tom Scott, this filter should "never ever, ever, ever, EVER be turned off"
+      var filteredKey = key.replace("nametbd:", "");
       filteredKey = filteredKey.replace(/</gi, "&lt;");
       filteredKey = filteredKey.replace(/>/gi, "&gt;");
       var item = items[key];
       var filteredItem = item.replace(/</gi, "&lt;");
-      item = item.replace(/>/gi, "&gt;");
+      filteredItem = filteredItem.replace(/>/gi, "&gt;");
       list.innerHTML += "<li>" + filteredKey + " - <b>" + filteredItem + "</b> - <button type=\"button\" onclick=\"deleteItem(\'" + key.replace(/\"/gi, "&quot;") + "\')\">Remove</button></li>";
       // console.log("loaded item " + key);
     }
